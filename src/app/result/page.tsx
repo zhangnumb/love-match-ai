@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import MatchResult from '../components/result/MatchResult';
 
 interface SearchParams {
@@ -5,11 +6,18 @@ interface SearchParams {
   femaleName?: string;
 }
 
-export default async function ResultPage({
-  searchParams,
-}: {
+interface PageProps {
   searchParams: SearchParams;
-}) {
+}
+
+export const metadata: Metadata = {
+  title: '姓名配对结果 - AI姓名配对',
+  description: '查看你们的姓名配对结果',
+};
+
+export default function ResultPage({
+  searchParams,
+}: PageProps) {
   // TODO: 这里将来需要调用 AI API 获取真实的匹配结果
   const mockResult = {
     matchScore: 85,
@@ -32,4 +40,4 @@ export default async function ResultPage({
       </div>
     </main>
   );
-} 
+}
