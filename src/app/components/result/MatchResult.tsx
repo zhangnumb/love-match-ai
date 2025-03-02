@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 interface MatchResultProps {
   maleName: string;
   femaleName: string;
@@ -33,13 +35,13 @@ export default function MatchResult({ maleName, femaleName, matchScore, analysis
 
       {/* 返回按钮 */}
       <div className="mt-8 text-center">
-        <a
+        <Link
           href="/"
           className="inline-block px-6 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors"
         >
           返回首页
-        </a>
+        </Link>
       </div>
     </div>
   );
-} 
+}
